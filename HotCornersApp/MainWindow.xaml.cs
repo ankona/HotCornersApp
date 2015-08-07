@@ -35,7 +35,7 @@ namespace HotCornersApp {
             comboBox1.SelectedIndex = Array.IndexOf((Array)this.Resources["ComboBoxItems"], Properties.Settings.Default.topRight);
             comboBox2.SelectedIndex = Array.IndexOf((Array)this.Resources["ComboBoxItems"], Properties.Settings.Default.bottomLeft);
             comboBox3.SelectedIndex = Array.IndexOf((Array)this.Resources["ComboBoxItems"], Properties.Settings.Default.bottomRight);
-            if(!Properties.Settings.Default.topLeftProcess.Equals("")) {
+            if (!Properties.Settings.Default.topLeftProcess.Equals("")) {
                 label0.Content = Properties.Settings.Default.topLeftProcess;
             }
             if (!Properties.Settings.Default.topRightProcess.Equals("")) {
@@ -100,7 +100,7 @@ namespace HotCornersApp {
                 this.Show();
                 this.WindowState = WindowState.Normal;
             }
-            if(checkBox4.IsChecked==true) {
+            if (checkBox4.IsChecked == true) {
                 disableCharmsHotTriggers();
             }
             callMainLoop();
@@ -110,13 +110,13 @@ namespace HotCornersApp {
             RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ImmersiveShell", true);
             if (registryKey.GetValue("EdgeUI") != null) {
                 registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ImmersiveShell\\EdgeUI", true);
-                if(registryKey.GetValue("DisableTLcorner")==null) {
-                registryKey.CreateSubKey("DisableTLcorner");
-                registryKey.SetValue("DisableTLcorner", Convert.ToInt32("1"));
+                if (registryKey.GetValue("DisableTLcorner") == null) {
+                    registryKey.CreateSubKey("DisableTLcorner");
+                    registryKey.SetValue("DisableTLcorner", Convert.ToInt32("1"));
                 } else {
                     registryKey.SetValue("DisableTLcorner", Convert.ToInt32("1"));
                 }
-                if(registryKey.GetValue("DisableCharmsHint")==null) {
+                if (registryKey.GetValue("DisableCharmsHint") == null) {
                     registryKey.CreateSubKey("DisableCharmsHint");
                     registryKey.SetValue("DisableCharmsHint", Convert.ToInt32("1"));
                 } else {
@@ -138,7 +138,7 @@ namespace HotCornersApp {
                     registryKey.SetValue("DisableCharmsHint", Convert.ToInt32("1"));
                 }
             }
-               
+
             registryKey.Close();
         }
 
@@ -210,44 +210,103 @@ namespace HotCornersApp {
                 if (hotCornerIndex == 0) {
                     List<List<VirtualKeyCode>> resultantKeys = processKeyboardShortcutAsString(Properties.Settings.Default.topLeftShortcut);
                     if (resultantKeys[0].Count == 3) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 2) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 1) {
-                        kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+                        try {
+
+                            kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+                        } catch {
+
+                        }
                     }
                 }
                 if (hotCornerIndex == 1) {
                     List<List<VirtualKeyCode>> resultantKeys = processKeyboardShortcutAsString(Properties.Settings.Default.topRightShortcut);
                     if (resultantKeys[0].Count == 3) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+                        try {
+
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 2) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+                        try {
+
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 1) {
-                        kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     }
                 }
                 if (hotCornerIndex == 2) {
                     List<List<VirtualKeyCode>> resultantKeys = processKeyboardShortcutAsString(Properties.Settings.Default.bottomLeftShortcut);
                     if (resultantKeys[0].Count == 3) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 2) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 1) {
-                        kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     }
                 }
                 if (hotCornerIndex == 3) {
                     List<List<VirtualKeyCode>> resultantKeys = processKeyboardShortcutAsString(Properties.Settings.Default.bottomRightShortcut);
                     if (resultantKeys[0].Count == 3) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1], resultantKeys[0][2] }, resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 2) {
-                        kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(new[] { resultantKeys[0][0], resultantKeys[0][1] }, resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     } else if (resultantKeys[0].Count == 1) {
-                        kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+                        try {
+                            kb.Keyboard.ModifiedKeyStroke(resultantKeys[0][0], resultantKeys[1][0]);
+
+                        } catch {
+
+                        }
                     }
                 }
-            } else if(index.Equals("Run Program")) {
+            } else if (index.Equals("Run Program")) {
                 if (hotCornerIndex == 0) {
                     if (!File.Exists(Properties.Settings.Default.topLeftProcess)) {
                         System.Windows.MessageBox.Show("The program.exe file does not exist! Cannot launch.");
@@ -270,7 +329,7 @@ namespace HotCornersApp {
                     Process.Start(Properties.Settings.Default.bottomLeftProcess);
                 }
                 if (hotCornerIndex == 3) {
-                  if (!File.Exists(Properties.Settings.Default.topRightProcess)) {
+                    if (!File.Exists(Properties.Settings.Default.topRightProcess)) {
                         System.Windows.MessageBox.Show("The program.exe file does not exist! Cannot launch.");
                         return;
                     }
@@ -325,7 +384,7 @@ namespace HotCornersApp {
             Properties.Settings.Default.bottomLeft = (String)comboBox2.SelectedItem;
             Properties.Settings.Default.bottomRight = (String)comboBox3.SelectedItem;
             Properties.Settings.Default.Save();
-            if(Properties.Settings.Default.popUpEnabled) {
+            if (Properties.Settings.Default.popUpEnabled) {
                 ExitDonate donate = new ExitDonate();
             } else {
                 App.Current.Shutdown();
@@ -334,16 +393,13 @@ namespace HotCornersApp {
         }
 
         void LockWorkStationSafe() {
-            bool result = LockWorkStation();
-            if (result == false) {
-                throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
-            }
+           LockWorkStation();
         }
         void showTaskView() {
             try {
                 kb.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.TAB);
-            } catch (Exception e) {
-                System.Windows.MessageBox.Show(e.Message);
+            } catch {
+
             }
         }
         void ShowDesktop() {
@@ -396,7 +452,7 @@ namespace HotCornersApp {
             if (!Properties.Settings.Default.bottomRightShortcut.Equals("")) {
                 label3.Content = Properties.Settings.Default.bottomRightShortcut;
             }
-            if(checkBox4.IsChecked==true) {
+            if (checkBox4.IsChecked == true) {
                 disableCharmsHotTriggers();
             }
             if (checkBox1.IsChecked == true) {
@@ -425,8 +481,7 @@ namespace HotCornersApp {
                     KeyboardShortcutReader reader = new KeyboardShortcutReader(0);
                     label0.Content = Properties.Settings.Default.topLeftShortcut;
                 }
-            }
-            else if((sender as System.Windows.Controls.ComboBox).SelectedItem != null && (sender as System.Windows.Controls.ComboBox).SelectedItem.ToString().Equals("Run Program")) {
+            } else if ((sender as System.Windows.Controls.ComboBox).SelectedItem != null && (sender as System.Windows.Controls.ComboBox).SelectedItem.ToString().Equals("Run Program")) {
                 if (Properties.Settings.Default.topLeftProcess.Length == 0) {
                     ProcessPathReader reader = new ProcessPathReader(0);
                 }
