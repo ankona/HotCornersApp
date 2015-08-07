@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="25,35,0,0" VerticalAlignment="Top" Width="100" Source="Resources/ExposeIcon.png"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="181,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="189"><Run FontWeight="Bold" Text="HotCornersApp V1.0"/><LineBreak/><Run Text="InputSimulator 1.0.4"/><LineBreak/><Run/><LineBreak/><Run Text="Brought to you by "/><Run FontWeight="Bold" Text="bytecar "/><Run Text="(c) 2015"/><LineBreak/><Run Text="Kartik Vedalaveni"/><LineBreak/><Run Text="bytecar@gmail.com"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="181,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="189"><Run FontWeight="Bold" Text="HotCornersApp V1.5"/><LineBreak/><Run Text="InputSimulator 1.0.4"/><LineBreak/><Run/><LineBreak/><Run Text="Brought to you by "/><Run FontWeight="Bold" Text="bytecar "/><Run Text="(c) 2015"/><LineBreak/><Run Text="Kartik Vedalaveni"/><LineBreak/><Run Text="bytecar@gmail.com"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="181,175,0,0" VerticalAlignment="Top" Width="125" Height="30" Click="appClose" />
         <TextBlock Margin="181,140,207,58">           
             <Hyperlink NavigateUri="https://sites.google.com/site/bytecar/please-visit-again" RequestNavigate="Hyperlink_RequestNavigate">

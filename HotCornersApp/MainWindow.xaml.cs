@@ -500,7 +500,7 @@ namespace HotCornersApp {
             string caption = "HotCornersApp Help";
             MessageBoxButton buttons = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Information;
-            System.Windows.MessageBox.Show("1)Select the functions for HotCorners\n2)Select Save\n3)Enjoy the App! \n4)Dont' forget to rate us and buy addon to support us.", caption, buttons, icon);
+            System.Windows.MessageBox.Show("1)Select the functions for HotCorners\n2)Select Save\n3)Enjoy the App! \n4)Dont' forget to rate us and Donate!.", caption, buttons, icon);
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e) {
