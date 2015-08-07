@@ -22,5 +22,197 @@ namespace HotCornersApp.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool runOnStartup {
+            get {
+                return ((bool)(this["runOnStartup"]));
+            }
+            set {
+                this["runOnStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool runInTray {
+            get {
+                return ((bool)(this["runInTray"]));
+            }
+            set {
+                this["runInTray"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool startMinimized {
+            get {
+                return ((bool)(this["startMinimized"]));
+            }
+            set {
+                this["startMinimized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string topLeft {
+            get {
+                return ((string)(this["topLeft"]));
+            }
+            set {
+                this["topLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string topRight {
+            get {
+                return ((string)(this["topRight"]));
+            }
+            set {
+                this["topRight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bottomLeft {
+            get {
+                return ((string)(this["bottomLeft"]));
+            }
+            set {
+                this["bottomLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bottomRight {
+            get {
+                return ((string)(this["bottomRight"]));
+            }
+            set {
+                this["bottomRight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string topLeftShortcut {
+            get {
+                return ((string)(this["topLeftShortcut"]));
+            }
+            set {
+                this["topLeftShortcut"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bottomLeftShortcut {
+            get {
+                return ((string)(this["bottomLeftShortcut"]));
+            }
+            set {
+                this["bottomLeftShortcut"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string topRightShortcut {
+            get {
+                return ((string)(this["topRightShortcut"]));
+            }
+            set {
+                this["topRightShortcut"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bottomRightShortcut {
+            get {
+                return ((string)(this["bottomRightShortcut"]));
+            }
+            set {
+                this["bottomRightShortcut"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string topLeftProcess {
+            get {
+                return ((string)(this["topLeftProcess"]));
+            }
+            set {
+                this["topLeftProcess"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string topRightProcess {
+            get {
+                return ((string)(this["topRightProcess"]));
+            }
+            set {
+                this["topRightProcess"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bottomLeftProcess {
+            get {
+                return ((string)(this["bottomLeftProcess"]));
+            }
+            set {
+                this["bottomLeftProcess"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bottomRightProcess {
+            get {
+                return ((string)(this["bottomRightProcess"]));
+            }
+            set {
+                this["bottomRightProcess"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool charmsCornerDisabled {
+            get {
+                return ((bool)(this["charmsCornerDisabled"]));
+            }
+            set {
+                this["charmsCornerDisabled"] = value;
+            }
+        }
     }
 }

@@ -8,8 +8,8 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("HotCornersApp")]
-[assembly: AssemblyDescription("Application for setting and adding functionality for hotcorners of the screen")]
-[assembly: AssemblyConfiguration("Hobby")]
+[assembly: AssemblyDescription("Application for setting and adding functionality to hotcorners of the screen")]
+[assembly: AssemblyConfiguration("bytecar")]
 [assembly: AssemblyCompany("bytecar@gmail.com")]
 [assembly: AssemblyProduct("HotCornersApp")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
