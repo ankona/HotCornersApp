@@ -325,7 +325,12 @@ namespace HotCornersApp {
             Properties.Settings.Default.bottomLeft = (String)comboBox2.SelectedItem;
             Properties.Settings.Default.bottomRight = (String)comboBox3.SelectedItem;
             Properties.Settings.Default.Save();
-            App.Current.Shutdown();
+            if(Properties.Settings.Default.popUpEnabled) {
+                ExitDonate donate = new ExitDonate();
+            } else {
+                App.Current.Shutdown();
+            }
+
         }
 
         void LockWorkStationSafe() {
@@ -335,7 +340,11 @@ namespace HotCornersApp {
             }
         }
         void showTaskView() {
-            kb.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.TAB);
+            try {
+                kb.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.TAB);
+            } catch (Exception e) {
+                System.Windows.MessageBox.Show(e.Message);
+            }
         }
         void ShowDesktop() {
             Shell32.Shell winShell = new Shell32.Shell();
@@ -387,7 +396,9 @@ namespace HotCornersApp {
             if (!Properties.Settings.Default.bottomRightShortcut.Equals("")) {
                 label3.Content = Properties.Settings.Default.bottomRightShortcut;
             }
-            disableCharmsHotTriggers();
+            if(checkBox4.IsChecked==true) {
+                disableCharmsHotTriggers();
+            }
             if (checkBox1.IsChecked == true) {
                 this.Hide();
                 ni.ShowBalloonTip(10000);
@@ -423,6 +434,7 @@ namespace HotCornersApp {
             } else {
                 Properties.Settings.Default.topLeftShortcut = "";
                 Properties.Settings.Default.topLeftProcess = "";
+                Properties.Settings.Default.Save();
                 label0.Content = "";
             }
         }
@@ -441,6 +453,7 @@ namespace HotCornersApp {
             } else {
                 Properties.Settings.Default.topRightShortcut = "";
                 Properties.Settings.Default.topRightProcess = "";
+                Properties.Settings.Default.Save();
                 label1.Content = "";
             }
         }
@@ -459,6 +472,7 @@ namespace HotCornersApp {
             } else {
                 Properties.Settings.Default.bottomLeftShortcut = "";
                 Properties.Settings.Default.bottomLeftProcess = "";
+                Properties.Settings.Default.Save();
                 label2.Content = "";
             }
         }
@@ -477,6 +491,7 @@ namespace HotCornersApp {
             } else {
                 Properties.Settings.Default.bottomRightShortcut = "";
                 Properties.Settings.Default.bottomRightProcess = "";
+                Properties.Settings.Default.Save();
                 label3.Content = "";
             }
         }
@@ -485,7 +500,44 @@ namespace HotCornersApp {
             string caption = "HotCornersApp Help";
             MessageBoxButton buttons = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Information;
-            System.Windows.MessageBox.Show("1) Select the functions for HotCorners\n2)Select Save\n3)Enjoy the App! \n4)Dont' forget to rate us and buy addon to support us.", caption, buttons, icon);
+            System.Windows.MessageBox.Show("1)Select the functions for HotCorners\n2)Select Save\n3)Enjoy the App! \n4)Dont' forget to rate us and buy addon to support us.", caption, buttons, icon);
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e) {
+            Properties.Settings.Default.runOnStartup = false;
+            Properties.Settings.Default.runInTray = false;
+            Properties.Settings.Default.startMinimized = false;
+            Properties.Settings.Default.topLeft = "";
+            Properties.Settings.Default.topRight = "";
+            Properties.Settings.Default.bottomLeft = "";
+            Properties.Settings.Default.bottomRight = "";
+            Properties.Settings.Default.bottomLeftProcess = "";
+            Properties.Settings.Default.bottomRightProcess = "";
+            Properties.Settings.Default.topLeftProcess = "";
+            Properties.Settings.Default.topRightProcess = "";
+            Properties.Settings.Default.bottomLeftShortcut = "";
+            Properties.Settings.Default.bottomRightShortcut = "";
+            Properties.Settings.Default.topLeftShortcut = "";
+            Properties.Settings.Default.topRightShortcut = "";
+            Properties.Settings.Default.popUpEnabled = true;
+            Properties.Settings.Default.Save();
+            label0.Content = "";
+            label1.Content = "";
+            label2.Content = "";
+            label3.Content = "";
+            label0.Content = "";
+            label1.Content = "";
+            label2.Content = "";
+            label3.Content = "";
+            checkBox2.IsChecked = false;
+            checkBox1.IsChecked = false;
+            checkBox3.IsChecked = false;
+            checkBox4.IsChecked = false;
+            comboBox0.SelectedIndex = -1;
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+
         }
     }
 }

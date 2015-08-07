@@ -41,28 +41,20 @@ namespace HotCornersApp {
             ofd.DefaultExt = ".exe";
             if (result == false) return;
             textBox.Text = ofd.FileName;
-            if(screenIndex==0) {
-                Properties.Settings.Default.topLeftProcess = ofd.FileName;
-            }else if(screenIndex==1) {
-                Properties.Settings.Default.topRightProcess = ofd.FileName;
-            } else if(screenIndex==2) {
-                Properties.Settings.Default.topRightProcess = ofd.FileName;
-            } else if(screenIndex==3) {
-                Properties.Settings.Default.topRightProcess = ofd.FileName;
-            }
             this.path = ofd.FileName;
         }
 
         public void onSave(object sender, RoutedEventArgs e) {
             if (screenIndex == 0) {
-                Properties.Settings.Default.topLeftShortcut = path;
+                Properties.Settings.Default.topLeftProcess = this.path;
             } else if (screenIndex == 1) {
-                Properties.Settings.Default.topRightShortcut = path;
+                Properties.Settings.Default.topRightProcess = this.path;
             } else if (screenIndex == 2) {
-                Properties.Settings.Default.bottomLeftShortcut = path;
+                Properties.Settings.Default.bottomLeftProcess = this.path;
             } else if (screenIndex == 3) {
-                Properties.Settings.Default.bottomRightShortcut = path;
+                Properties.Settings.Default.bottomRightProcess = this.path;
             }
+            Properties.Settings.Default.Save();
             this.Close();
         }
     }

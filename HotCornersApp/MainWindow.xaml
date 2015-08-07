@@ -11,6 +11,7 @@
     <!--750x550-->
     <Window.Resources>
         <x:Array x:Key="ComboBoxItems" Type="sys:String">
+            <sys:String>No Selection</sys:String>
             <sys:String>Lock Screen</sys:String>
             <sys:String>Show Desktop</sys:String>
             <sys:String>Task View</sys:String>
@@ -71,6 +72,7 @@
                 <MenuItem Header="Exit" Click="CloseApp" />
             </MenuItem>
             <MenuItem Header="_Edit">
+                <MenuItem Header="Reset All Settings" Click="MenuItem_Click_1" />
                 <MenuItem Header="Save" Click="buttonClicked" />
             </MenuItem>
             <MenuItem Header="_Help">

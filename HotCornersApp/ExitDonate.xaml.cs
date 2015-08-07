@@ -17,15 +17,19 @@ namespace HotCornersApp {
     /// <summary>
     /// Interaction logic for About.xaml
     /// </summary>
-    public partial class About : Window {
-        public About() {
+    public partial class ExitDonate : Window {
+        public ExitDonate() {
             InitializeComponent();
+            this.Show();
         }
         public void appClose(object sender, EventArgs e) {
+            Properties.Settings.Default.popUpEnabled =(bool)!checkBox.IsChecked;
+            Properties.Settings.Default.Save();
             this.Close();
+            App.Current.Shutdown();
         }
 
-        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e) {
+        private void Hyperlink_RequestNavigateDonate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e) {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }

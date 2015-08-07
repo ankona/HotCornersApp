@@ -214,5 +214,17 @@ namespace HotCornersApp.Properties {
                 this["charmsCornerDisabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool popUpEnabled {
+            get {
+                return ((bool)(this["popUpEnabled"]));
+            }
+            set {
+                this["popUpEnabled"] = value;
+            }
+        }
     }
 }
