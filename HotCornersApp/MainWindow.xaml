@@ -13,6 +13,7 @@
         <x:Array x:Key="ComboBoxItems" Type="sys:String">
             <sys:String>No Selection</sys:String>
             <sys:String>Lock Screen</sys:String>
+            <sys:String>Put Monitor to Sleep</sys:String>
             <sys:String>Show Desktop</sys:String>
             <sys:String>Task View</sys:String>
             <sys:String>Keyboard Shortcut</sys:String>

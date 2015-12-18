@@ -18,13 +18,21 @@ using System.Runtime.InteropServices;
 using WindowsInput.Native;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Interop;
 
 namespace HotCornersApp {
     public partial class MainWindow : Window {
+        private int SC_MONITORPOWER = 0xF170;
+        private uint WM_SYSCOMMAND = 0x0112;
+
         private NotifyIcon ni;
         private WindowsInput.InputSimulator kb = new WindowsInput.InputSimulator();
         [DllImport("user32.dll", SetLastError = true)]
         static extern bool LockWorkStation();
+
+        [DllImport("user32.dll")]
+        static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
         public MainWindow() {
             InitializeComponent();
             checkBox2.IsChecked = Properties.Settings.Default.runOnStartup;
@@ -206,6 +214,8 @@ namespace HotCornersApp {
                 ShowDesktop();
             } else if (index.Equals("Task View")) {
                 showTaskView();
+            } else if (index.Equals("Put Monitor to Sleep")) {
+                sleepMonitor();
             } else if (index.Equals("Keyboard Shortcut")) {
                 if (hotCornerIndex == 0) {
                     List<List<VirtualKeyCode>> resultantKeys = processKeyboardShortcutAsString(Properties.Settings.Default.topLeftShortcut);
@@ -394,6 +404,11 @@ namespace HotCornersApp {
 
         void LockWorkStationSafe() {
            LockWorkStation();
+        }
+
+        void sleepMonitor() {
+            IntPtr windowHandle = new WindowInteropHelper(this).Handle;
+            SendMessage(windowHandle, WM_SYSCOMMAND, (IntPtr)SC_MONITORPOWER, (IntPtr)2);
         }
         void showTaskView() {
             try {
